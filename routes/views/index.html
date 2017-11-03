@@ -1,0 +1,277 @@
+<html>
+    <head>
+        <title>Index</title>
+        <style>
+            * {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 0;
+                margin: 0;
+                font-family: sans-serif;
+                box-sizing: border-box;
+            }
+            style, title, script {
+                display: none;
+            }
+            .Header {
+                font-family: Audiowide;
+                color: black;
+                text-shadow: 2px 0 0 goldenrod, -2px 0 0 goldenrod, 0 2px 0 goldenrod, 0 -2px 0 goldenrod, 2px 2px 0 goldenrod, -2px -2px 0 goldenrod;
+                background-color: black;
+                width: 100vw;
+                font-size: 64px;
+                color: black !important;
+            }
+            body {
+                background-image: url(https://i.ytimg.com/vi/ViJJ4R1biJc/maxresdefault.jpg);
+                overflow-x: hidden;
+                color: white;
+            }
+            #main-body {
+                width: 1024px;
+                background-color: rgb(22, 22, 22);
+                padding: 16px;
+                align-items: flex-start;
+                transition: .5s;
+                opacity: 1;
+            }
+            #main-body h2 {
+                margin-top: 16px;
+                border-bottom: 1px solid white;
+                width: 100%;
+            }
+            input {
+                border: none;
+                background-color: transparent;
+                color: white;
+                border-bottom: 1px solid white;
+                font-size: 36px;
+                width: 49%;
+            }
+            .row-div {
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                padding: 16px 0;
+            }
+            select {
+                border: none;
+                background-color: transparent;
+                color: gray;
+                border-bottom: 1px solid white;
+                font-size: 36px;
+                width: 49%;
+            }
+            p {
+                margin-bottom: 16px;
+                text-align: center;
+            }
+            #questions {
+                width: 100%; 
+                margin-bottom: 16px;
+            }
+            .question {
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                padding-left: 8px;
+            }
+            .question:nth-child(even) {
+                background-color: #333;
+            }
+            .question h4 {
+                font-family: monospace !important;
+            }
+
+            .question input {
+                width: 72px;
+            }
+            button {
+                background-color: rgb(22, 22, 22);
+                color: white;
+                border: 1px solid white;
+                font-size: 24px;
+                padding: 4px 48px;
+            }
+            #results {
+                transition: .5s;
+                display: none;
+                opacity: 0;
+                width: 600px;
+                background-color: rgb(22, 22, 22);
+            }
+            #results h1 {
+                font-size: 64px;
+            }
+            #results h2 {
+                font-size: 50px;
+            }
+            #results h3 {
+                margin-bottom: 8px;
+                font-size: 24px;
+            }
+            #results p {
+                padding: 0 16px;
+            }
+            img {
+                width: 100%;
+                margin-bottom: 8px;
+            }
+        </style>
+        <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1 class="Header">STARWARS CHARACTER GENERATOR</h1>
+        <div id="main-body" style="font-size:24px;">
+            <h2>Get your very own Starwars Character</h2>
+            <p>Enter all your real facts and we'll use the Force (or an algorithm) to generate your full Starwars background</p>
+            <h3>Your Gender</h3>
+            <select style="margin-bottom: 16px;">
+                <option>Not sure...</option>
+                <option>Guy</option>
+                <option>Girl</option>
+            </select>
+            <h3>You name</h3>
+            <div class="row-div">
+                <input type="text" placeholder="First Name" />
+                <input type="text" placeholder="Last Name" />
+            </div>
+            <h3>Your Birthday</h3>
+            <div class="row-div">
+                <select id='birth-day' placeholder='Day'>
+                    <option>Day</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                    <option>31</option>
+                </select>
+                <select id='birth-month' placholder='Month'>
+                    <option>Month</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+            </div>
+            <h2>Quiz</h2>
+            <p>Answer these questions to find out your role in the Starwars universe. Give your answers on a scale of one to ten, ten being 'HECK YA!' and one being 'I might if you paid me'</p>
+            <div id="questions">
+            </div>
+            <button onclick="send()">Do The Thing!</button>
+        </div>
+        <div id="results">
+        </div>
+    </body>
+    <script>
+        const qs = () => {
+            const qDiv = document.getElementById('questions')
+            const questions = ["I am a competitive person", "I would kiss my girl/boy friend in front of my parents", "I tend to know random facts", "I read/listen to books for fun often",
+                                "I push my limits", "I volenteer to give prayers often", "Give me a problem, I have an answer", "I often get lost in thought",
+                                "I'm in tune with my emotions", "I'd rather stay quiet than start a fight", "Group success is important to me", "I was good at hide and seek as a kid",
+                                "I'm not afriad to cry", "I help my friends resolve issues", "I want people around me to be happy", "I can keep a secret"]
+            for(let i = 0; i < questions.length; i++) {
+                const temp = document.createElement('div')
+                temp.innerHTML = `<h4>${questions[i]}</h4><input type="number" />`
+                temp.classList.add('question')
+                qDiv.appendChild(temp)
+            }
+        }
+        window.onload = () => {
+            const day = document.getElementById('birth-day')
+            const month = document.getElementById('birth-month')
+            qs()
+
+        }
+        const send = () => {
+            const names = document.querySelectorAll('input')
+            const date = document.querySelectorAll('select')
+            const body = document.getElementById('main-body')
+            const res = document.getElementById('results')
+            const attr = []
+            for(let i = 2; i < names.length; i++) {
+                attr.push(names[i].value)
+            }
+            console.log(attr)
+            const name = {
+                gender: date[0].value,
+                first: names[0].value,
+                
+            }
+            const lastName = {
+                name: names[1].value,
+            }
+            const birthday = {
+                day: date[1].value,
+                month: date[2].value
+            }
+            const firstSend = window.location.href + "first/" + JSON.stringify(name)
+            const lastSend = window.location.href + 'last/' + JSON.stringify(lastName)
+            const birthSend = window.location.href + 'role/planet/' + JSON.stringify(birthday)
+            const attrSend = window.location.href + 'role/class/' + JSON.stringify(attr)
+            let nameObj
+            let lastObj
+            let birthObj
+            let arrtObj
+            $.getJSON(firstSend, (data) => {
+                nameObj = data
+            })
+            $.getJSON(lastSend, (data) =>{
+                lastObj = data
+            })
+            $.getJSON(birthSend, data => {
+                birthObj = data
+            })
+            $.getJSON(attrSend, data => {
+                arrtObj = data
+            })
+            body.style.opacity = 1
+            body.style.opacity = 0
+            setTimeout(function() {
+                body.style.display = 'none'
+                res.innerHTML = `<h1>${nameObj.name} ${lastObj.name}</h1><h2>${arrtObj.type}</h2><img src="${arrtObj.url}"/><h3>Home World: ${birthObj.planet}</h3><h3>Time period: ${birthObj.time}</h3><p>${arrtObj.des}</p><button onclick="location.reload()" style="margin-bottom: 8px">Take the Quiz again</button>`
+                res.style.display = 'flex'
+                setTimeout(function () {
+                    res.style.opacity = 1
+                }, 500)
+            }, 501)
+        }
+    </script>
+</html>
